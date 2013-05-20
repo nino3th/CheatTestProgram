@@ -1,0 +1,9 @@
+C:\Users\nino\Documents\Visual Studio 2010\Projects\CheatTestProgram\CheatTestProgram\bin\Release\CheatTestProgram.exe
+C:\Users\nino\Documents\Visual Studio 2010\Projects\CheatTestProgram\CheatTestProgram\bin\Release\CheatTestProgram.pdb
+C:\Users\nino\Documents\Visual Studio 2010\Projects\CheatTestProgram\CheatTestProgram\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Users\nino\Documents\Visual Studio 2010\Projects\CheatTestProgram\CheatTestProgram\obj\x86\Release\CheatTestProgram.CheatClick.resources
+C:\Users\nino\Documents\Visual Studio 2010\Projects\CheatTestProgram\CheatTestProgram\obj\x86\Release\CheatTestProgram.Properties.Resources.resources
+C:\Users\nino\Documents\Visual Studio 2010\Projects\CheatTestProgram\CheatTestProgram\obj\x86\Release\GenerateResource.read.1.tlog
+C:\Users\nino\Documents\Visual Studio 2010\Projects\CheatTestProgram\CheatTestProgram\obj\x86\Release\GenerateResource.write.1.tlog
+C:\Users\nino\Documents\Visual Studio 2010\Projects\CheatTestProgram\CheatTestProgram\obj\x86\Release\CheatTestProgram.exe
+C:\Users\nino\Documents\Visual Studio 2010\Projects\CheatTestProgram\CheatTestProgram\obj\x86\Release\CheatTestProgram.pdb
