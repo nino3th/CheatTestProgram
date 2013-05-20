@@ -14,6 +14,9 @@
  * ----------------------------------------------------------------------------------------------------
  * 20130520  | NinoLiu  | 1.0.1  | Add Trackbar item that can modify the transparency of Form, and improve
  *                                 problem of message of messsagebox show repeatly.
+ * ----------------------------------------------------------------------------------------------------
+ * 20130520  | NinoLiu  | 1.0.2  | Add status strip to show cursor poition.
+ * ----------------------------------------------------------------------------------------------------
  * ======================================================================================================
  */
 using System;
@@ -70,9 +73,9 @@ namespace CheatTestProgram
         static int init_handle = 0;
         IntPtr handle_old;
         public void timer1_Tick(object sender, EventArgs e)
-        {
-            label1.Text = "(" + Cursor.Position.X.ToString() + "," + Cursor.Position.Y.ToString() + ")";
-            
+        {            
+            toolStripStatusLabel1.Text = "(" + Cursor.Position.X.ToString() + "," + Cursor.Position.Y.ToString() + ")";
+
             IntPtr handle = FindWindow("#32770", null);
             if (init_handle == 0)
             {
