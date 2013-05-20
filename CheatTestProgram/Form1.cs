@@ -12,6 +12,8 @@
  * ----------------------------------------------------------------------------------------------------
  * 201305015 | NinoLiu  | 1.0.0  | Released for user test.
  * ----------------------------------------------------------------------------------------------------
+ * 20130520  | NinoLiu  | 1.0.1  | Add Trackbar item that can modify the transparency of Form, and improve
+ *                                 problem of message of messsagebox show repeatly.
  * ======================================================================================================
  */
 using System;
@@ -65,32 +67,40 @@ namespace CheatTestProgram
             return System.DateTime.Now;
         }
 
+        static int init_handle = 0;
+        IntPtr handle_old;
         public void timer1_Tick(object sender, EventArgs e)
         {
             label1.Text = "(" + Cursor.Position.X.ToString() + "," + Cursor.Position.Y.ToString() + ")";
             
             IntPtr handle = FindWindow("#32770", null);
-            this.richTextBox1.AppendText("handle:" + handle.ToString() + "\n");
+            if (init_handle == 0)
+            {
+                init_handle++;
+                handle_old = handle;
+            }
+            
+            //this.richTextBox1.AppendText("handle:" + handle.ToString() + "\n");
             //if (handle.ToString() != "197954" && handle.ToString() != "0")
-            if(handle.ToString() != "0")
+
+            if (handle.ToString() != handle_old.ToString() )
             {
                 MessageBox_Killer(handle, sender, e);
             }
+            handle_old = handle;
         }
 
         private void MessageBox_Killer(IntPtr hWnd, object sender, EventArgs e)
         {
             StringBuilder mSB = new StringBuilder();
 
-            //IntPtr txhandle = FindWindowEx(hWnd, IntPtr.Zero, "static", null);
-            IntPtr txhandle = FindWindowEx(hWnd, IntPtr.Zero, "#32770", null);
-            
-            this.richTextBox1.AppendText("txhandle:"+txhandle.ToString()+"\n");
+            IntPtr txhandle = FindWindowEx(hWnd, IntPtr.Zero, "static", null);
+                        
             int len = GetWindowTextLength(txhandle);    
 
-            GetWindowText(txhandle, mSB, len + 1);            
-            
-            if (hWnd.ToString() != "0" && txhandle.ToString() != "67470")
+            GetWindowText(txhandle, mSB, len + 1);
+
+            if (hWnd.ToString() != "0" && txhandle.ToString() != "67470" && mSB.ToString() != "")
             {
                 capture_time++;
 
@@ -145,6 +155,11 @@ namespace CheatTestProgram
                     break;
                 PauseForDelay(move_interval);
             }    
+        }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            this.Opacity = Convert.ToDouble (trackBar1.Value * 0.01);
         }
     }
 }

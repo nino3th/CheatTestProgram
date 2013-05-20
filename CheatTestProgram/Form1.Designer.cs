@@ -44,6 +44,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -95,9 +97,9 @@
             // richTextBox1
             // 
             this.richTextBox1.HideSelection = false;
-            this.richTextBox1.Location = new System.Drawing.Point(12, 26);
+            this.richTextBox1.Location = new System.Drawing.Point(3, 67);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(183, 188);
+            this.richTextBox1.Size = new System.Drawing.Size(183, 76);
             this.richTextBox1.TabIndex = 5;
             this.richTextBox1.Text = "";
             // 
@@ -159,7 +161,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(286, 12);
+            this.label4.Location = new System.Drawing.Point(286, 172);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(88, 12);
             this.label4.TabIndex = 13;
@@ -168,11 +170,22 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(13, 8);
+            this.label6.Location = new System.Drawing.Point(1, 188);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(90, 12);
             this.label6.TabIndex = 14;
             this.label6.Text = "Captured Message";
+            // 
+            // trackBar1
+            // 
+            this.trackBar1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.trackBar1.Location = new System.Drawing.Point(675, 26);
+            this.trackBar1.Maximum = 100;
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(83, 40);
+            this.trackBar1.TabIndex = 20;
+            this.trackBar1.Value = 100;
+            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
             // 
             // CheatClick
             // 
@@ -181,6 +194,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(770, 270);
+            this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
@@ -198,6 +212,7 @@
             this.Name = "CheatClick";
             this.Text = "Form1";
             this.TopMost = true;
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -220,6 +235,7 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TrackBar trackBar1;
     }
 }
 
